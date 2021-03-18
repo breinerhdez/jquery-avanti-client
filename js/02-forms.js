@@ -13,12 +13,16 @@ $(document).ready(async () => {
  * Servicios disponibles
  ******************************************
  * Enviar datos por método GET
+ * GET https://avanti-server.herokuapp.com/form
  *
  * Enviar datos por método POST
+ * POST https://avanti-server.herokuapp.com/form
  *
  * Obtener departamentos
+ * GET https://avanti-server.herokuapp.com/regions
  *
  * Obtener ciudades
+ * GET https://avanti-server.herokuapp.com/cities?region_id=NUMBER
  */
 
 /**
