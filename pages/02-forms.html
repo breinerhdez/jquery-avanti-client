@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller de jQuery - Formularios y AJAX</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="../index.html">Inicio</a></li>
+    <li role="presentation"><a href="01-selectores.html">Selectores</a></li>
+    <li role="presentation" class="active"><a href="02-forms.html">Formularios</a></li>
+  </ul>
+
+
+  <h1>Taller de jQuery - Formularios y AJAX</h1>
+  <hr>
+
+
+  <form id="my-form">
+    <div class="row">
+
+      <div class="form-group">
+        <label for="region">Departamento</label>
+        <select class="form-control" name="region" id="region" required>
+          <option value="">Seleccionar</option>
+          <option value="A">Departamento 1</option>
+          <option value="B">Departamento 2</option>
+          <option value="C">Departamento 3</option>
+          <option value="D">Departamento 4</option>
+          <option value="E">Departamento 5</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="ciudad">Ciudad</label>
+        <select class="form-control" name="ciudad" id="ciudad">
+          <option value="">Seleccionar</option>
+          <option value="W">Ciudad 1</option>
+          <option value="X">Ciudad 2</option>
+          <option value="Y">Ciudad 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input class="form-control" type="text" name="email" id="email" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <button class="btn btn-primary btn-submit" name="method" value="get">Enviar por GET</button>
+      <button class="btn btn-danger btn-submit" name="method" value="post">Enviar por POST</button>
+    </div>
+  </form>
+
+  <hr>
+  <div class="row">
+    <h3>Contador</h3>
+    <button class="btn btn-primary" id="btn-clone">Clonar</button>
+  </div>
+  <hr>
+  <div class="row counter-container to-clone">
+    <button class="btn btn-default increment">+ Incrementar</button>
+    <span class="btn btn-default counter-value">0</span>
+    <button class="btn btn-default decrement">- Decrementar</button>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
+    integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
+    crossorigin="anonymous"></script>
+  <script src="../js/02-forms.js"></script>
+</body>
+
+</html>
