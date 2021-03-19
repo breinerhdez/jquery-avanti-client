@@ -47,6 +47,11 @@ $(document).ready(async () => {
  *
  * 9. Clonar el contador original y generar nuevos contadores independientes.
  *
+ * 10. Gráficos
+ *
+ * 11. Tablas - dataTable
+ *
+ * 12. Validación de datos
  */
 
 $(".btn-submit").click(function () {
