@@ -6,8 +6,55 @@
  */
 $(document).ready(function () {
   // en esta sección se escribe el código que debe ejecutar cuando se cargue el DOM
+
+  $("#itemNum2").css("color", "red");
+
+  $(".liClass").css("font-weight", "bold").css("text-transform", "uppercase");
+
+  $(".alert").addClass("alert-info").removeClass("alert-danger");
 });
 // en esta sección se escribe el código que se dispara con eventos
+
+$(".list-group-item").click(function () {
+  console.log($(this).text());
+});
+
+var mostrar = true;
+$("#showAlert").click(function () {
+  mostrar = !mostrar;
+  if (mostrar) {
+    // mostrar
+    $(".alert").fadeIn(2000, function () {
+      $("#showAlert").text("Ocultar");
+    });
+  } else {
+    // ocultar
+    $(".alert").hide();
+    $("#showAlert").text("Mostrar");
+  }
+});
+
+// botones
+$("#inicio").click(function () {
+  let value = $("#textOption").val();
+  $("#textOption").val("");
+  $("ul").prepend(`<li class="list-group-item">${value}</li>`);
+});
+$("#final").click(function () {
+  $("ul").append(`<li class="list-group-item">Final</li>`);
+});
+
+$("#antes").click(function () {
+  $("ul").before(`<div>Texto antes</div>`);
+});
+$("#despues").click(function () {
+  $("ul").after(`<div>Texto después</div>`);
+});
+
+$("#btn-save").click(function () {
+  console.log("Guardé los cambios");
+  $("#modal-id").modal("hide");
+});
 
 /**
  * Guía
