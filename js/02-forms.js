@@ -55,15 +55,39 @@ $(document).ready(async () => {
  */
 
 var counter = 0;
-$(".increment").click(function () {
-  counter = parseInt($(".counter-value").text());
-  $(".counter-value").text(++counter);
+
+// $(".increment").click(function () {
+//   counter = parseInt($(".counter-value").text());
+//   $(".counter-value").text(++counter);
+// });
+
+/*
+<div class="row counter-container to-clone">
+  <button class="btn btn-default increment">+ Incrementar</button>
+  <span class="btn btn-default counter-value">0</span>
+  <button class="btn btn-default decrement">- Decrementar</button>
+</div>
+*/
+
+// $(".increment").click(function () {
+$(document).on("click", ".increment", function () {
+  let counterValueElement = $(this).parents(".counter-container").find(".counter-value");
+
+  counter = parseInt(counterValueElement.text());
+  counterValueElement.text(++counter);
 });
 
-$(".decrement").click(function () {
-  counter = parseInt($(".counter-value").text());
-  $(".counter-value").text(--counter);
+$(document).on("click", ".decrement", function () {
+  let counterValueElement = $(this).parents(".counter-container").find(".counter-value");
+
+  counter = parseInt(counterValueElement.text());
+  counterValueElement.text(--counter);
 });
+
+// $(".decrement").click(function () {
+//   counter = parseInt($(".counter-value").text());
+//   $(".counter-value").text(--counter);
+// });
 
 $("#btn-clone").click(function () {
   let html = '<div class="row counter-container">' + $(".to-clone").html() + "</div>";
