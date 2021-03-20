@@ -54,6 +54,25 @@ $(document).ready(async () => {
  * 12. Validación de datos
  */
 
+var counter = 0;
+$(".increment").click(function () {
+  counter = parseInt($(".counter-value").text());
+  $(".counter-value").text(++counter);
+});
+
+$(".decrement").click(function () {
+  counter = parseInt($(".counter-value").text());
+  $(".counter-value").text(--counter);
+});
+
+$("#btn-clone").click(function () {
+  let html = '<div class="row counter-container">' + $(".to-clone").html() + "</div>";
+  $(".to-clone").after(html);
+});
+
+/**
+ *
+ */
 $(".btn-submit").click(function () {
   $("#my-form").attr("method", $(this).val());
 });
