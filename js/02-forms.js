@@ -4,10 +4,57 @@
  * https://getbootstrap.com/docs/3.3/getting-started/
  * https://jqueryui.com/
  */
+
+var table;
+
 $(document).ready(async () => {
   // en esta sección se escribe el código que debe ejecutar cuando se cargue el DOM
   cargarDepartamentos();
+
+  // para tablas que se renderizan en html al cargar la página
+  $(".test-table").DataTable();
+
+  // para cargar con ajax
+  // en columns se debe indicar las columnas a utlizar
+  // table = $(".test-table").DataTable({
+  //   ajax: "https://avanti-server.herokuapp.com/",
+  //   columns: [{ data: "nombre" }, { data: "email" }],
+  // });
+
+  // table.on("xhr", function () {
+  //   var json = table.ajax.json();
+  //   // alert(json.data.length + " row(s) were loaded");
+  // });
+
+  // atributos name
+  $("#my-form").validate({
+    rules: {
+      email: {
+        required: true,
+        minlength: 15,
+      },
+      edad: {
+        mayorEdad: true,
+      },
+    },
+    messages: {
+      email: {
+        required: "Este campo es requerido",
+        minlength: jQuery.validator.format("Debe tener mínimo {0} caracteres"),
+      },
+    },
+  });
+
+  jQuery.validator.addMethod(
+    "mayorEdad",
+    function (value, element) {
+      // allow any non-whitespace characters as the host part
+      return value >= 18;
+    },
+    "Debe ser mayor de edad"
+  );
 });
+
 // en esta sección se escribe el código que se dispara con eventos
 
 /******************************************
